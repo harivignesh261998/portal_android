@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='home'></ion-back-button>
+    </ion-buttons>
+    <ion-title>Portal DashBoard </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+  <ion-content>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <!-- <h1>Exam Portal</h1> -->
+        <ion-card>
+          <ion-item>
+            <ion-icon name="pin" slot="start"></ion-icon>
+            <ion-label>Admin Portal</ion-label>
+            <ion-button fill="outline" slot="end" routerLink='aportal'>View</ion-button>
+          </ion-item>
+        
+          <ion-card-content>
+           The admin portal is to asses the apptitude knowledge to compitete across the participats
+          </ion-card-content>
+        </ion-card>
+        
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <ion-item>
+            <ion-icon name="pin" slot="start" ></ion-icon>
+            <ion-label>College Portal</ion-label>
+            <ion-button fill="outline" slot="end" routerLink='cportal'>View</ion-button>
+          </ion-item>
+        
+          <ion-card-content>
+           The College portal is to asses the apptitude knowledge to crack the interview 
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    
+    </ion-slides>
+  </ion-content>
+
+

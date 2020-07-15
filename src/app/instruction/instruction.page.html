@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Instruction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="exam">
+    <b> Exam Portal</b>
+  </h2>
+  <h2 class="name">
+    Hey {{name}},
+  </h2>
+  <h1 class="inst"><b>
+
+    Welcome to Exam Portal
+    Apptitude Skills Challenge<br>
+    Test
+  </b>
+
+  </h1>
+  <br>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <b>Test Duration</b> 
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         <b>No of Question</b> 
+        </div>
+      </ion-col>
+      
+    </ion-row>
+   
+    <ion-row>
+      <ion-col>
+        <div>
+          <b>{{duration}}</b> 
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         <b>{{noofq}}</b> 
+        </div>
+      </ion-col>
+     
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-col>
+        <div>
+          <b>Topic:{{topic}}</b> 
+        </div>
+      </ion-col>
+     
+      
+    </ion-row>
+  </ion-grid>
+<div *ngIf='IsDisabled'>
+  <ion-button color="medium" (click)='presentPopover()'>Read Instruction</ion-button>
+  <p class="counter">{{counterr}}</p>
+</div>
+<div *ngIf='!IsDisabled'>
+  <ion-button color="success" (click)='getQues()'>Take Test</ion-button>
+</div>
+</ion-content>

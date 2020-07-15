@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='home/portal'></ion-back-button>
+    </ion-buttons>
+    <ion-title>College Portal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor='let ques of cTest;let i=index'>
+
+    <ion-card>
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label>{{ques.testName}}</ion-label>
+        <div *ngIf='!check[i]'>
+
+          <ion-button fill="outline" slot="end" (click)='min(ques._id)'>View</ion-button>
+        </div>
+        <div *ngIf='check[i]'>
+
+          <ion-button fill="outline" slot="end">Solved</ion-button>
+        </div>
+      </ion-item>
+    <div *ngIf='!check[i]'>
+
+      <ion-card-content>
+        Duration:{{ques.duration}} minutes
+      
+      <div class="max">
+
+        Max Marks:{{ques.maxMark}} marks
+      </div>  
+      </ion-card-content>
+    </div>
+    <div *ngIf='check[i]'>
+
+      <ion-card-content>
+       Score:{{score[i]}}/{{ques.maxMark}}
+      
+      <div class="max">
+
+        Percent:{{math.floor((score[i]*100)/ques.maxMark)}}%
+      </div>  
+      </ion-card-content>
+    </div>
+    </ion-card>
+  </div>
+
+</ion-content>

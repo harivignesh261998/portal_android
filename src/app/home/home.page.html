@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Practice
+      Dashboard
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Interview Preparation Kit</ion-card-subtitle>
+      <ion-card-title><b>Exam Portal</b></ion-card-title>
+    </ion-card-header>
+    <ion-button shape="round" fill="outline" color='success' routerLink='portal'>Start Explore</ion-button>
+  
+    
+
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Interview Preparation Kit</ion-card-subtitle>
+      <ion-card-title><b>Interview Preparation Portal</b></ion-card-title>
+    </ion-card-header>
+    <ion-button shape="round" fill="outline" color='success'>Start Explore</ion-button>
+  
+   
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Interview Preparation Kit</ion-card-subtitle>
+      <ion-card-title><b>Learning Portal</b></ion-card-title>
+    </ion-card-header>
+
+    <ion-button shape="round" fill="outline" color='success'>Start Explore</ion-button>
+  
+   
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Interview Preparation Kit</ion-card-subtitle>
+      <ion-card-title><b>Practice Portal</b></ion-card-title>
+    </ion-card-header>
+    <ion-button shape="round" fill="outline" color='success' routerLink='practicetest'>Start Explore</ion-button>
+  
+    
+  </ion-card>
+<br>
+
+<ion-title>Skills Avialable For Practice</ion-title>
+<hr>
+<ion-card>
+  <ion-item  class="ion-activated">
+    <ion-icon name="people" slot="start"></ion-icon>
+    <ion-label>Ages and Partners</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="map" slot="start"></ion-icon>
+    <ion-label>Directions</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="alarm" slot="start"></ion-icon>
+    <ion-label>Clocks</ion-label>
+  </ion-item>
+  
+
+  
+</ion-card>  
+
+<ion-card>
+  <ion-item  class="ion-activated">
+    <ion-icon name="calendar" slot="start"></ion-icon>
+    <ion-label>Calenders</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="beer" slot="start"></ion-icon>
+    <ion-label>Proportions</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="funnel" slot="start"></ion-icon>
+    <ion-label>Ratios</ion-label>
+  </ion-item>
+</ion-card>   
+</ion-content>
+
+
+
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar translucent>
+      <ion-title>{{firstName}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-item>
+      <ion-item >
+        <ion-icon name="cog-outline" slot="start"></ion-icon>
+        <ion-label>Settings</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon  (click)='res()' name="barcode-outline" slot="start"></ion-icon>
+        <ion-label>Results</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        <ion-label>Logout</ion-label>
+      </ion-item>
+     
+    </ion-list>
+  </ion-content>
+</ion-menu>
+

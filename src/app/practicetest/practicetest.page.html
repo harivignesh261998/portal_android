@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Practice Portal</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='home'></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<br>
+
+<ion-content>
+ <ion-subtitle><a routerLink='/home'>Practice</a> | <span style='color: blue;'>Practice Test</span></ion-subtitle>
+ <br>
+<div *ngFor='let ques of practice;let i=index'>
+  <ion-card>
+    <ion-card-header>
+      <p class="message">
+      {{ques.message}}
+      </p>
+      <ion-text>
+        <div *ngIf="ques.difficulty=='Easy'"> 
+          <p class="e"><span style="color: green;">{{ques.difficulty}}</span>,Max Score:15</p>
+        </div>
+        <div *ngIf="ques.difficulty=='Medium'"> 
+          <p class="e"><span style="color: orangered;">{{ques.difficulty}}</span>,Max Score:20</p>
+        </div>
+        <div *ngIf="ques.difficulty=='Hard'"> 
+          <p class="e"><span style="color: red;">{{ques.difficulty}}</span>,Max Score:30</p>
+        </div>
+      </ion-text>
+      
+     
+    </ion-card-header>
+    <div *ngIf='!check[i]'>
+      <ion-button shape="round" fill="outline" color='success'>Solve</ion-button>
+    </div>
+
+    <div *ngIf='check[i]'>
+      <ion-button shape="round" fill="outline" color='success'>Try Again</ion-button>
+    </div>
+  
+  
+   
+  </ion-card>
+  
+</div>
+
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" #fab>
+  <ion-fab-button color="success" (click)="presentModal()">
+    <ion-icon name="funnel" ></ion-icon>
+  </ion-fab-button>
+  	
+</ion-fab>
+
+
+
+</ion-content>
