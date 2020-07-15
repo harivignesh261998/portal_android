@@ -87,8 +87,7 @@ async presentPopover(ev: any) {
     event: ev,
     translucent: true
   });
-  this.currentPopover = popover;
-      
+ 
   return await popover.present();
 }
 

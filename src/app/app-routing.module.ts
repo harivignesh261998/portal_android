@@ -45,11 +45,11 @@ const routes: Routes = [
     loadChildren: () => import('./instruction/instruction.module').then( m => m.InstructionPageModule)
   },
   {
-    path: 'asolve',
+    path: 'home/portal/aportal/asolve',
     loadChildren: () => import('./asolve/asolve.module').then( m => m.AsolvePageModule)
   },
   {
-    path: 'csolve',
+    path: 'home/portal/cportal/csolve',
     loadChildren: () => import('./csolve/csolve.module').then( m => m.CsolvePageModule)
   },
   

@@ -295,11 +295,11 @@ export class AuthService{
   
      getAtestbyID(){
          if(this.testname=='Atest'){
-          return this.http.get('apiTest/getATest/'+this.testid);
+          return this.http.get('http://localhost:4700/apiTest/getATest/'+this.testid);
   
          }
          else{
-          return this.http.get('apiTest/getCTest/'+this.testid);
+          return this.http.get('http://localhost:4700/apiTest/getCTest/'+this.testid);
          }
          
      }

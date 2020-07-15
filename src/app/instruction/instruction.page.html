@@ -64,7 +64,14 @@
   <ion-button color="medium" (click)='presentPopover()'>Read Instruction</ion-button>
   <p class="counter">{{counterr}}</p>
 </div>
-<div *ngIf='!IsDisabled'>
+<div *ngIf='!IsDisabled' class="test">
   <ion-button color="success" (click)='getQues()'>Take Test</ion-button>
 </div>
+
+<ion-text>
+  <p class="power">
+    
+    Test Powered by Exam Portal
+  </p>
+</ion-text>
 </ion-content>
