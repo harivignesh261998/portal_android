@@ -1,9 +1,96 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>csolve</ion-title>
+    <ion-title>Exam Portal</ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-text>
+          <p class="qno">
+      
+            <b>{{index+1}} of {{no}} questions</b>
+          </p>
+        </ion-text>
+      </ion-col>
+      <ion-col>
 
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          <p>
+            <b> Topic:{{title}}</b>
+          </p>
+          
+    
+        </ion-text>
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+  <ion-card>
+    
+  
+    <ion-card-content>
+     <strong>
+       {{questions?.ques}}
+     </strong> 
+       
+       
+    </ion-card-content>
+  </ion-card>
+  
+  
+  <div class="radioo">
+
+    <mat-radio-group aria-label="Select an option"   (change)='answer()' [(ngModel)]="favoriteSeason">
+      
+      <ion-list>
+        <ion-item>
+          <mat-radio-button  value={{questions?.option1}}>{{questions?.option1}}</mat-radio-button><br>
+        </ion-item>
+        <ion-item>
+          <mat-radio-button  value={{questions?.option2}}>{{questions?.option2}}</mat-radio-button><br>
+          
+        </ion-item>
+        <ion-item>
+          <mat-radio-button  value={{questions?.option3}}>{{questions?.option3}}</mat-radio-button><br>
+          
+        </ion-item>
+        <ion-item>
+          <mat-radio-button  value={{questions?.option4}}>{{questions?.option4}}</mat-radio-button><br>
+         
+        </ion-item>
+        
+      </ion-list>
+  
+      </mat-radio-group>
+  </div>
+
+  <div *ngIf='IsDisabled'> 
+    <ion-button color="success" (click)='next()'>Save & Next</ion-button>
+    <ion-button color="success" disabled={{IsDisabled}}>Previous</ion-button>
+  </div>
+
+  <div class="next" *ngIf='!IsDisabled && !IsSubmit'>
+    <ion-button color="success" (click)='next()'>Save & Next</ion-button>
+    <ion-button color="success" (click)='previous()'>Prevoius</ion-button>
+
+    </div>
+
+    <div class="sub" *ngIf='IsSubmit'>
+      <ion-button color="success" (click)='checkanswer()'>Submit</ion-button>
+    <ion-button color="success" (click)='previous()'>Prevoius</ion-button>
+      </div>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color='success'>
+         {{counterr}}
+        </ion-fab-button>
+      </ion-fab>
+ 
 </ion-content>

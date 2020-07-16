@@ -52,6 +52,10 @@ const routes: Routes = [
     path: 'home/portal/cportal/csolve',
     loadChildren: () => import('./csolve/csolve.module').then( m => m.CsolvePageModule)
   },
+  {
+    path: 'result',
+    loadChildren: () => import('./result/result.module').then( m => m.ResultPageModule)
+  },
   
   
   

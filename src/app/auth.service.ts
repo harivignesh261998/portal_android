@@ -51,7 +51,7 @@ export class AuthService{
   
       createUser(firstName:string,lastName:string,mailId:string,password:string,collegeId:number){
           const authData:AuthData={firstName:firstName,lastName:lastName,mailId:mailId,password:password,collegeId:collegeId};
-           this.http.post("apiRegister/studentRegister",authData).subscribe(()=>{
+           this.http.post("http://localhost:4700/apiRegister/studentRegister",authData).subscribe(()=>{
                console.log('register Successfully');
                this.router.navigate(['/login']);
            },error=>{
@@ -235,7 +235,7 @@ export class AuthService{
           this.id=localStorage.getItem('id');
   
       }
-      return this.http.get<GlobalPracticeTest[]>('apiPractice/'+this.id)
+      return this.http.get<GlobalPracticeTest[]>('http://localhost:4700/apiPractice/'+this.id)
   }
   
   getElement(id:string,cs){
@@ -279,7 +279,7 @@ export class AuthService{
       }
   
       updatePractice(id:string){
-          this.http.post('apiPracticeQuestionsUpdate/',id);    
+          this.http.post('http://localhost:4700/apiPracticeQuestionsUpdate/',id);    
       
       }
   
@@ -352,22 +352,22 @@ export class AuthService{
   
       if(this.testname=='Atest'){
           console.log('Atest->')
-          this.http.post(`apiScoreUpdate/aTestScoreUpdate/${this.userId}`, update).subscribe(res=>{
+          this.http.post(`http://localhost:4700/apiScoreUpdate/aTestScoreUpdate/${this.userId}`, update).subscribe(res=>{
               console.log(res);
           }); 
           
-          this.http.put(`apiTest/post-aTestUpdate/${update.testId}`,update).subscribe(res=>{
+          this.http.put(`http://localhost:4700/apiTest/post-aTestUpdate/${update.testId}`,update).subscribe(res=>{
               console.log('update--->',res);
           });
       }
       else{
           console.log('Ctest->');
-          this.http.post(`apiScoreUpdate/cTestScoreUpdate/${this.userId}`,update).subscribe(res=>{
+          this.http.post(`http://localhost:4700/apiScoreUpdate/cTestScoreUpdate/${this.userId}`,update).subscribe(res=>{
               console.log(res)
           });
   
            
-          this.http.put(`apiTest/post-cTestUpdate/${update.testId}`,update).subscribe(res=>{
+          this.http.put(`http://localhost:4700/apiTest/post-cTestUpdate/${update.testId}`,update).subscribe(res=>{
               console.log('update--->',res);
           });
           
@@ -413,24 +413,27 @@ export class AuthService{
   }
   
   getnextpracticeques(id){
-      return this.http.get('apiPractice/'+id);
+      return this.http.get('http://localhost:4700/apiPractice/'+id);
   
   }
   
   getAResult(){
-      return this.http.get('apiTest/getATests');
+      return this.http.get('http://localhost:4700/apiTest/getATests');
   }
   getCResult(){
-      return this.http.get('apiTest/getCTests');
+      return this.http.get('http://localhost:4700/apiTest/getCTests');
   }
   
   getProgress(){
-    return  this.http.get('apiProgress/monthlyProgress/'+this.userId);
+    this.userId=JSON.parse(localStorage.getItem('userId'));
+    return  this.http.get('http://localhost:4700/apiProgress/monthlyProgress/'+this.userId);
       
   }
   
   getDailyprogress(){
-      return this.http.get('apiProgress/dailyProgress/'+this.userId);
+    this.userId=JSON.parse(localStorage.getItem('userId'));
+      
+      return this.http.get('http://localhost:4700/apiProgress/dailyProgress/'+this.userId);
   }
   
   async presentToast() {
