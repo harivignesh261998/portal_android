@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';    
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -16,7 +17,7 @@ firstName;
     
   }
 
-  constructor(private auhtService:AuthService,private menu: MenuController) { }
+  constructor(private auhtService:AuthService,private menu: MenuController,private router:Router) { }
   
   openFirst() {
     this.menu.enable(true, 'first');
