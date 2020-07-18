@@ -20,7 +20,9 @@ filters:any={}
 count=0;
 fill_1=[];
   constructor(public modalController: ModalController,private navParams:NavParams) { 
-   this.fil=this.navParams.data;  
+  //  console.log(this.navParams.data)
+    this.fil=this.navParams.data;  
+  //  console.log(this.fil)
    this.applyFilters();
   }
 
@@ -31,6 +33,7 @@ fill_1=[];
   }
   private applyFilters(){
     this.filterdata=_.filter(this.fil,_.conforms(this.filters));
+    console.log(this.filterdata)
   }
 
   removeFilter(property:string){

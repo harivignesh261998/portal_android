@@ -39,8 +39,8 @@ check=[];
     this.authService.getIsSolved().subscribe(res=>{
       this.solvedData=res['practicedQuestions'];
       this.count2=this.solvedData.length;
-      //this.applyFilters(); 
       this.fun();
+      
     })
 
    
@@ -51,7 +51,7 @@ check=[];
 async presentModal() {
   const modal = await this.modalController.create({
     component: FilterComponent,
-    componentProps:this.filterdata,
+    componentProps:this.practice,
     cssClass: 'my-custom-class'
   });
   modal.onDidDismiss().then(data=>{

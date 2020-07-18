@@ -16,9 +16,11 @@ score=[];
 check=[];
 math=Math;
 name='Ctest';
+public loading=false;
   constructor(private authService:AuthService,private router:Router) { }
 
   ngOnInit() {
+    this.loading=true;
     this.authService.getCTest().subscribe(res=>{
       this.cTest=res;
       this.count1=this.cTest.length
@@ -31,6 +33,7 @@ name='Ctest';
       //console.log(this.score);
       this.count2=this.Solved.length;
       this.fun();
+      this.loading=false;
     })
   }
 
@@ -50,7 +53,7 @@ name='Ctest';
   min(id){
     this.authService.giveduration(id,this.name);
     this.authService.atestId(id);
-    this.router.navigate(['home/portal/aportal/instruction']);
+    this.router.navigate(['home/portal/cportal/instruction']);
   }
 
 }

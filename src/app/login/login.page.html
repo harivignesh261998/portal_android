@@ -1,25 +1,30 @@
 
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-     Exam Portal Login
-    </ion-title>
-    
-  </ion-toolbar>
-</ion-header>
-  <ion-content padding center text-center>
-    
-    <ion-list>
-      <ion-item>
-        <ion-input placeholder='E-mail' [(ngModel)]="email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input placeholder='Password' type='password' [(ngModel)]="password"></ion-input>
-      </ion-item>
-    </ion-list>
-  
-    <ion-button expand="full" (click)='login()'>Log in</ion-button>
-  </ion-content>
-<button click>
+  <ng-template #customLoadingTemplate>
 
-</button>
+  </ng-template>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+       Exam Portal Login
+      </ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
+    <ion-content padding center text-center>
+      
+      <ion-list>
+        <ion-item>
+          <ion-input placeholder='E-mail' [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder='Password' type='password' [(ngModel)]="password"></ion-input>
+        </ion-item>
+      </ion-list>
+    
+      <ion-button expand="full" (click)='login()'>Log in</ion-button>
+    </ion-content>
+    <ng-template #customLoadingTemplate>
+
+    </ng-template>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>  

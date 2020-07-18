@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CsolvePageRoutingModule } from './csolve-routing.module';
 
 import { CsolvePage } from './csolve.page';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CsolvePageRoutingModule
+    CsolvePageRoutingModule,
+    NgxLoadingModule.forRoot({})
   ],
   declarations: [CsolvePage]
 })

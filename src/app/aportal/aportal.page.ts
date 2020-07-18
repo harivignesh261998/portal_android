@@ -16,11 +16,13 @@ export class AportalPage implements OnInit {
  check=[];
  name='Atest';
  math=Math;
- 
+ public loading=false;
 
   constructor(private authService:AuthService,private router:Router) { }
 
   ngOnInit() {
+    this.loading=true;
+
     this.authService.getATest().subscribe(res=>{
       this.aTest=res;
       this.count1=this.aTest.length;
@@ -34,6 +36,7 @@ export class AportalPage implements OnInit {
       console.log(this.count2);
       
       this.fun();
+      this.loading=false;
     })
     
   }

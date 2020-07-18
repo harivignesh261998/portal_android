@@ -19,10 +19,12 @@ export class InstructionPage implements OnInit {
   timeleft=10;
   IsDisabled=true;
   currentPopover =null;
+  public loading=false;
 
   constructor(private authService:AuthService,private router:Router,public popoverController: PopoverController) { }
 
   ngOnInit() {
+    this.loading=true;
    // this.authService.getDashboardoff();
     this.authService.getUsername().subscribe(res=>{
       this.name=res['firstName']
@@ -37,6 +39,7 @@ this.authService.getDuration().subscribe(res=>{
   this.noofq=res['questions']
   this.noofq=this.noofq.length;
   this.topic=res['testName']
+  this.loading=false
   
 })
 
@@ -89,6 +92,7 @@ async presentPopover(ev: any) {
   });
  
   return await popover.present();
+  
 }
 
 

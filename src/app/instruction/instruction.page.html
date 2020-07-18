@@ -74,4 +74,6 @@
     Test Powered by Exam Portal
   </p>
 </ion-text>
+<ng-template #customLoadingTemplate></ng-template>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
 </ion-content>

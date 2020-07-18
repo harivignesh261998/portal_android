@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { CportalPageRoutingModule } from './cportal-routing.module';
 
 import { CportalPage } from './cportal.page';
+import { NgxLoadingModule } from 'ngx-loading';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CportalPageRoutingModule
+    CportalPageRoutingModule,
+    NgxLoadingModule.forRoot({})
   ],
   declarations: [CportalPage]
 })

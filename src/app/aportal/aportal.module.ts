@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AportalPageRoutingModule } from './aportal-routing.module';
 
 import { AportalPage } from './aportal.page';
-
+import { NgxLoadingModule } from 'ngx-loading';
+ 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AportalPageRoutingModule
+    AportalPageRoutingModule,
+    NgxLoadingModule.forRoot({})
   ],
   declarations: [AportalPage]
 })

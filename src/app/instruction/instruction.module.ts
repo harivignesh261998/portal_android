@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { InstructionPageRoutingModule } from './instruction-routing.module';
 
 import { InstructionPage } from './instruction.page';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InstructionPageRoutingModule
+    InstructionPageRoutingModule,
+    NgxLoadingModule.forRoot({})
   ],
   declarations: [InstructionPage]
 })

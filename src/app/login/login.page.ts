@@ -10,28 +10,31 @@ import { Subscription } from 'rxjs';
 export class LoginPage implements OnInit {
 email:string;
 password:string;
-private authStatusSub:Subscription;
+private authListnerSubs:Subscription;
 @Input() deviceXz:boolean;
   isLoading=false;
   hide=true;
-
+  public UserIsAuthenticated=false;
+public loading=false;
   constructor(private authService:AuthService) { }
 
   ngOnInit() {
-    this.authStatusSub= this.authService.getAuthStatusListner().subscribe(
-      authStatus=>{
-        this.isLoading=false;
-      }
-    );
+
+    this.UserIsAuthenticated=this.authService.getIsAuth();
+    this.authListnerSubs=this.authService.getAuthStatusListner().subscribe(isAuthenticated=>{
+      this.UserIsAuthenticated=isAuthenticated;
+    });
   }
 
   login(){
+    this.loading=true;
     console.log(this.email,this.password);
     this.authService.login(this.email,this.password);
     this.email='';
     this.password='';
-
+   
 
   }
+
 
 }

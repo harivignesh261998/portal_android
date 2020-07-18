@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http'
 import { Observable, Subject, of } from 'rxjs';
 import { GlobalPracticeTest } from './global.data';
 import { Router } from '@angular/router';
-import { AuthData, Auth, Update } from './auth-data.model';
+import { AuthData, Auth, Update, Overall } from './auth-data.model';
 import { GlobalData, GlobalPracticeSummary, GlobalUserData } from './models/global-data';
 import { map } from 'rxjs/internal/operators/map';
 import { ToastController } from '@ionic/angular';
@@ -102,6 +102,7 @@ export class AuthService{
              
              
           },error=>{
+              this.offloading();
               this.authStatusListner.next(false);
               
           });
@@ -444,5 +445,13 @@ export class AuthService{
     toast.present();
   }
    
+  overallupdate(score){
+    const update:Overall={score:score}
+    this.http.put(`apiScoreUpdate/overallScoreUpdate/${this.userId}`,update);
+}
+
+offloading(){
+    return false;
+}
 
 }

@@ -17,6 +17,7 @@ import {CommonModule } from '@angular/common';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import {CommonModule } from '@angular/common';
               IonicModule.forRoot(),
               AppRoutingModule,
               BrowserAnimationsModule,
-              CommonModule 
+              CommonModule,
+             
               
 
             ],

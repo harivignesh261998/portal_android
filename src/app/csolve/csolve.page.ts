@@ -31,9 +31,11 @@ favoriteSeason;
 IsDisabled=true;
 IsSubmit=false;
 name;
+public loading=false;
   constructor(private authService:AuthService,public toastController: ToastController,private router:Router) { }
 
   ngOnInit() {
+    this.loading=true;
     let sdate=new Date();
      this.hours = sdate.getHours();
     this.minutes = sdate.getMinutes();
@@ -46,10 +48,12 @@ name;
       this.testId=res['_id']
 
       this.timeleft=res['duration']*60;
+      
      
     })
     this.summa();
     this.neram();
+    this.loading=false;
   }
 
   summa(){

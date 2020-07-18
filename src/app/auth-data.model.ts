@@ -19,7 +19,9 @@ export interface Update{
     attempt:boolean;
     date:Date;
     
+}
 
-
+export interface Overall{
+    score:string;
 }
 
